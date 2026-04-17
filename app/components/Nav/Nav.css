@@ -39,7 +39,7 @@ nav {
 
 .nav-copy > h1 {
     margin-bottom: 16px;
-    font-size: clamp(1.8rem, 4.4vw, 3rem);
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
     font-weight: 800;
     line-height: 1;
     letter-spacing: -0.04em;
@@ -76,7 +76,7 @@ nav {
     }
 
     .nav-copy > h1 {
-        font-size: clamp(1.7rem, 5.4vw, 2.7rem);
+        font-size: clamp(1.5rem, 4.8vw, 2.35rem);
     }
 
     .nav-copy > p {
@@ -94,7 +94,7 @@ nav {
     .nav-top { margin-bottom: 24px; }
     .nav-brand-logo { width: 52px; }
     .nav-copy > h1 {
-        font-size: clamp(1.35rem, 9.8vw, 2.05rem);
+        font-size: clamp(1.22rem, 8.6vw, 1.8rem);
         line-height: 1.02;
         margin-bottom: 10px;
     }
@@ -120,7 +120,7 @@ nav {
     }
 
     .nav-copy > h1 {
-        font-size: clamp(1.2rem, 10.6vw, 1.7rem);
+        font-size: clamp(1.08rem, 9.2vw, 1.5rem);
         letter-spacing: -0.03em;
     }
 }
