@@ -1,9 +1,29 @@
 div.grid  {
     display: grid;
-    gap: 70px;
+    gap: 22px;
     width: 100%;
-    max-width: 900px;
-    margin: 50px auto;
+    max-width: 1152px;
+    margin: 44px auto 32px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding-inline: 10px;
+}
+
+@media (max-width: 960px) {
+    div.grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px;
+        margin: 36px auto 28px;
+        padding-inline: 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    div.grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+        margin: 28px auto 24px;
+        padding-inline: 6px;
+    }
 }
 
 div.grid > div {
@@ -12,6 +32,22 @@ div.grid > div {
     align-items: center;
     gap: 14px;
     width: 100%;
+    min-width: 0;
+    padding: 22px 18px;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background-color: rgba(18, 18, 18, 0.52);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transition: transform 0.22s ease, border-color 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+div.grid > div:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.12);
+    background-color: rgba(22, 22, 22, 0.62);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
 }
 
 div.grid > div > svg {
@@ -20,32 +56,46 @@ div.grid > div > svg {
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 10px;
-    border: 1px solid rgba(0, 255, 204, 0.4);
-    color: #00ffcc;
-    background-color: rgba(0, 255, 204, 0.05);
-    box-shadow: 
-        0 0 5px rgba(0, 255, 204, 0.2),
-        inset 0 0 5px rgba(0, 255, 204, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--theme);
+    background-color: rgba(20, 20, 20, 0.7);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
 }
 
 div.grid > div > h3 {
-    font-size: 18px;
+    font-size: 0.96rem;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-    color: #fff;
+    color: var(--text-primary);
 }
 
 div.grid > div > p {
-    font-size: 14px;
+    font-size: var(--font-size-body-sm);
+    line-height: 1.58;
     text-align: center;
-    color: #999;
+    color: var(--text-secondary);
 }
 
 @media (max-width: 768px) {
-    div.grid { gap: 0; }
-    div.grid > div { padding: 15px 10px; }
+    div.grid > div {
+        padding: 16px 14px;
+        border-radius: 18px;
+    }
     div.grid > div > svg { width: 50px; }
-    div.grid > div > h3 { font-size: 14px; }
-    div.grid > div > p { font-size: 12px; }
+    div.grid > div > h3 { font-size: 0.88rem; }
+    div.grid > div > p { font-size: 0.82rem; }
+}
+
+@media (max-width: 480px) {
+    div.grid > div {
+        padding: 14px 12px;
+        border-radius: 16px;
+    }
+
+    div.grid > div > svg {
+        width: 44px;
+        padding: 12px;
+        margin-bottom: 6px;
+    }
 }

@@ -1,51 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200..900&display=swap");
+@import "tailwindcss";
 
 :root {
-    --theme: #00ffcc;
+  --theme: #f5f5f5;
+  --bg-primary: #0a0a0a;
+  --bg-soft: #111111;
+  --bg-panel: rgba(20, 20, 20, 0.78);
+  --border-soft: #262626;
+  --border-strong: #404040;
+  --text-primary: #f5f5f5;
+  --text-secondary: #cccccc;
+  --text-muted: #999999;
+  --text-soft: #999999;
+  --site-width: min(100%, 1152px);
+  --font-size-hero: clamp(2rem, 5vw, 3.5rem);
+  --font-size-body-lg: clamp(0.98rem, 1.4vw, 1.08rem);
+  --font-size-body: 0.94rem;
+  --font-size-body-sm: 0.86rem;
+  --font-size-label: 0.8rem;
 }
 
 *,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    text-decoration: none;
-    font-family: "Source Sans 3", sans-serif;
-    transition: all 0.3s ease-in-out;
-    text-rendering: optimizeLegibility;
-    font-optical-sizing: auto;
-    image-rendering: optimizeQuality;
-    list-style: none;
-    -webkit-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    user-select: none !important;
-    -webkit-tap-highlight-color: transparent !important;
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Inter", sans-serif;
+  text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
 }
 
 html,
-body { overflow-x: hidden !important; }
-
-html { scroll-behavior: smooth; }
-
-body { 
-    position: relative;
-    padding: 15px;
-    background-color: #0a0a0a;
+body {
+  overflow-x: hidden;
 }
 
-button { cursor: pointer; }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  padding: 15px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.04), transparent 26%),
+    radial-gradient(circle at 85% 10%, rgba(255, 255, 255, 0.02), transparent 22%),
+    linear-gradient(180deg, #0a0a0a 0%, #0e0e0e 50%, #111111 100%);
+  color: var(--text-primary);
+}
+
+button {
+  cursor: pointer;
+}
 
 button:disabled {
-    cursor: not-allowed;
-    pointer-events: all !important;
+  cursor: not-allowed;
+  pointer-events: all !important;
 }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--theme); border-radius: 8px; }
-::-webkit-scrollbar-thumb:hover { background: var(--theme); }
-aside::-webkit-scrollbar { width: 6px; }
+textarea,
+input {
+  color: inherit;
+}
+
+::selection {
+  background: #f5f5f5;
+  color: #0a0a0a;
+}
+
+.page-shell {
+  position: relative;
+  min-height: calc(100vh - 30px);
+}
+
+.page-content {
+  position: relative;
+  z-index: 1;
+  animation: page-enter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.feature-card,
+.result-panel,
+nav,
+main > form {
+  animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.feature-card:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.feature-card:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #525252;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #737373;
+}
